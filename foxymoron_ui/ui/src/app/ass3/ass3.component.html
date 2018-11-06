@@ -1,3 +1,16 @@
-<p>
-  ass3 works!
-</p>
+<section class="sample-app-content">
+  <h1>Fibonacci Series:</h1>
+  <form #f="ngForm" (ngSubmit)="onSubmitTemplateBased()">
+      <p>
+          <label>Enter Number:</label>
+          <input type="text"  name="str"
+              [(ngModel)]="str" required>
+      </p>
+      <p>
+          <button type="submit" [disabled]="!f.valid">Submit</button>
+      </p>
+      <p *ngIf="showResult">
+        {{ msg }} 
+      </p>
+  </form>
+</section>
